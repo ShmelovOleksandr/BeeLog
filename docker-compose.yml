@@ -1,0 +1,10 @@
+ services:
+  postgres:
+     image: 'postgres:latest'
+     restart: always
+     environment:
+       - 'POSTGRES_DB=BeeLog'
+       - 'POSTGRES_PASSWORD=admin'
+       - 'POSTGRES_USER=admin'
+     ports:
+       - '5440:5432'
