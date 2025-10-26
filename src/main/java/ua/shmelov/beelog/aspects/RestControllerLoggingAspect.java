@@ -7,12 +7,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 @Aspect
-public class RestControllerLoggingAspect {
+public class RestControllerLoggingAspect implements LoggingAspect {
     private static final Logger log = LoggerFactory.getLogger(RestControllerLoggingAspect.class);
+
 
     @Around("@within(org.springframework.web.bind.annotation.RestController)")
     public Object log(ProceedingJoinPoint joinPoint) throws Throwable {
 
+        //TODO implement properly
         log.info("hello");
         Object response = joinPoint.proceed();
         log.info("bye");
